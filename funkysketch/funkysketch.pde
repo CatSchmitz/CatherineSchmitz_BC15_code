@@ -1,4 +1,4 @@
-import processing.sound.*;
+int size = 10;
 
 void setup(){
   size(500,500);
@@ -14,6 +14,7 @@ class Monster{
        ellipseMode(CENTER);
        ellipse(xpos + random(size + size/2), ypos + random(size + size/2), size, size);
      }
+     
      fill(255);
      ellipseMode(CENTER);
      //eyes
@@ -24,17 +25,18 @@ class Monster{
      ellipse(xpos + size/2, ypos + size/2, size/10, size/10);
      ellipse(xpos + size, ypos + size/2, size/10, size/10);
      
-
      
-     
-     //draw the eyes of the creature
    }
   
 }
 
 void draw(){
     background(255);
-    Monster m1 = new Monster(250, 250, mouseX);
+    Monster m1 = new Monster(mouseX, mouseY, size);
+   
+}
 
- 
+void mousePressed(){
+  size++;
+
 }
